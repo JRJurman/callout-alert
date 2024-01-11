@@ -1,0 +1,103 @@
+<callout-alert>
+	<script tl-effect>
+		// add google icon font manually (since loading fonts in shadow DOM is not allowed... yet)
+		const googleIconFont = this.ownerDocument.createElement('link');
+		googleIconFont.rel = 'stylesheet';
+		googleIconFont.href =
+			'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,600,0,0';
+		this.ownerDocument.head.appendChild(googleIconFont);
+	</script>
+
+	<style>
+		/* the host and slots should be blocks (not inline content) */
+		:host,
+		slot {
+			display: block;
+		}
+
+		/* Use Google's Material icon font for our callouts */
+		[name='icon'] span {
+			font-family: 'Material Symbols Outlined';
+		}
+
+		/* fallback styling, when a callout type is unrecognized */
+		:host(*) {
+			--callout-color: 129, 129, 129;
+			--callout-icon: 'description';
+			--callout-title: 'Note';
+		}
+
+		:host([type='note']) {
+			--callout-color: 47, 129, 247;
+			--callout-icon: 'info';
+			--callout-title: 'Note';
+		}
+
+		:host([type='tip']) {
+			--callout-color: 63, 185, 80;
+			--callout-icon: 'lightbulb';
+			--callout-title: 'Tip';
+		}
+
+		:host([type='important']) {
+			--callout-color: 163, 113, 247;
+			--callout-icon: 'feedback';
+			--callout-title: 'Important';
+		}
+
+		:host([type='warning']) {
+			--callout-color: 210, 153, 34;
+			--callout-icon: 'warning';
+			--callout-title: 'Warning';
+		}
+
+		:host([type='caution']) {
+			--callout-color: 248, 81, 73;
+			--callout-icon: 'report';
+			--callout-title: 'Caution';
+		}
+
+		[name='icon'] span::after {
+			content: var(--callout-icon);
+		}
+
+		[name='title'] span::after {
+			content: var(--callout-title);
+		}
+
+		callout-container {
+			display: block;
+			border-left: solid 3px rgb(var(--callout-color));
+			background: rgba(var(--callout-color), 0.1);
+			padding: 0.5em;
+		}
+
+		callout-header {
+			display: flex;
+			font-weight: bold;
+			color: rgb(var(--callout-color));
+			gap: 3px;
+			align-items: center;
+			margin-bottom: 0.5em;
+		}
+
+		callout-content {
+			display: block;
+		}
+	</style>
+
+	<callout-container>
+		<callout-header>
+			<slot name="icon">
+				<span aria-label="${'type'} icon"></span>
+			</slot>
+			<slot name="title">
+				<span></span>
+			</slot>
+		</callout-header>
+
+		<callout-content>
+			<slot></slot>
+		</callout-content>
+	</callout-container>
+</callout-alert>
