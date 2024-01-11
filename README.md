@@ -3,7 +3,9 @@
 A Github / Obsidian inspired web component for displaying a callout in your
 page.
 
-<img src="./preview.png" width="600px" alt="Several colored banners, each with an icon, title, and text.">
+<a href="https://codepen.io/JRJurman/pen/ZEPpKZg"><img src="./preview.png" width="600px" alt="Several colored banners, each with an icon, title, and text."></a>
+
+[Live Example on Codepen](https://codepen.io/JRJurman/pen/ZEPpKZg)
 
 ## How to use
 
