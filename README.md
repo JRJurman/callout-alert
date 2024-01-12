@@ -68,7 +68,7 @@ a page level.
   }
 </style>
 
-<callout-alert> Watch out for lighting bolts! </callout-alert>
+<callout-alert> Watch out for Lightning bolts! </callout-alert>
 ```
 
 ### Slot API
@@ -108,8 +108,25 @@ Until relative CSS colors are universally supported, the colors are defined as
 three numbers. Ideally, once relative colors are supported, we would allow any
 CSS color (this will be marked as a breaking change, if introduced).
 
-## Icon Library
+### Icon Library
 
 By default, this component loads Google's Material Icon font in the owner
 document using javascript. Sadly, it's currently not possible to load
 font-families from a web component context, or from a stylesheet in a component.
+
+## Development
+
+This component was built using Tram-Lite, you can read more about the project at
+[https://tram-one.io/tram-lite/](https://tram-one.io/tram-lite/).
+
+You can load the source file locally in an HTML file by including the following 
+script tag:
+```html
+<script src="https://unpkg.com/tram-lite@5/output/import-components.js" tl-components="./callout-alert.html"></script>
+```
+
+Alternatively, you can build the project locally by running the following:
+```sh
+npm ci
+npm run build
+```
