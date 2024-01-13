@@ -119,14 +119,13 @@ font-families from a web component context, or from a stylesheet in a component.
 This component was built using Tram-Lite, you can read more about the project at
 [https://tram-one.io/tram-lite/](https://tram-one.io/tram-lite/).
 
-You can load the source file locally in an HTML file by including the following 
-script tag:
-```html
-<script src="https://unpkg.com/tram-lite@5/output/import-components.js" tl-components="./callout-alert.html"></script>
-```
+You can load all the component variants, plus a slot and CSS variable example by
+running:
 
-Alternatively, you can build the project locally by running the following:
 ```sh
 npm ci
 npm run build
+npm start
 ```
+
+Then, navigate to the listed IP address `/example`.

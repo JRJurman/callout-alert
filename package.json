@@ -1,16 +1,27 @@
 {
-  "name": "callout-alert",
-  "version": "1.0.0",
-  "description": "Markdown Callouts, as a Web Component, written in Tram-Lite",
-  "main": "./callout-alert.js",
-  "files": ["./callout-alert.html", "./callout-alert.js"],
-  "scripts": {
-    "build": "npx tram-lite@5 export-components ./callout-alert.html --minified"
-  },
-  "keywords": ["tram-lite", "web-component", "callout", "alert", "banner"],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tram-lite": "^5.2.0"
-  }
+	"name": "callout-alert",
+	"version": "1.0.0",
+	"description": "Markdown Callouts, as a Web Component, written in Tram-Lite",
+	"main": "./callout-alert.js",
+	"files": [
+		"./callout-alert.html",
+		"./callout-alert.js"
+	],
+	"scripts": {
+		"start": "npx serve",
+		"build": "npx tram-lite export-components ./callout-alert.html --minified"
+	},
+	"keywords": [
+		"tram-lite",
+		"web-component",
+		"callout",
+		"alert",
+		"banner"
+	],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"serve": "^14.2.1",
+		"tram-lite": "^5.2.0"
+	}
 }

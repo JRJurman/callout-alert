@@ -1,0 +1,48 @@
+<!-- <script src="https://unpkg.com/tram-lite@5/output/import-components.js" tl-components="../callout-alert.html"></script> -->
+<script src="../callout-alert.js"></script>
+
+<style>
+	body {
+		font-family: sans-serif;
+	}
+	callout-alert {
+		margin-bottom: 1em;
+	}
+</style>
+
+<main>
+	<callout-alert type="note">
+		Highlights information that users should take into account, even when skimming.
+	</callout-alert>
+
+	<callout-alert type="tip">
+		Optional information to help a user be more successful.
+	</callout-alert>
+
+	<callout-alert type="important">
+		Crucial information necessary for users to succeed.
+	</callout-alert>
+
+	<callout-alert type="warning">
+		Critical content demanding immediate user attention due to potential risks.
+	</callout-alert>
+
+	<callout-alert type="caution"> Negative potential consequences of an action. </callout-alert>
+
+	<callout-alert> A callout with no type, or an unrecognized one. </callout-alert>
+
+	<style>
+		callout-alert[type='toy'] {
+			--callout-color: 0, 200, 225;
+			--callout-icon: 'toys';
+			--callout-title: 'CSS Variables';
+		}
+	</style>
+	<callout-alert type="toy"> This is a customized alert, using CSS variables. </callout-alert>
+
+	<callout-alert type="tip">
+		<span slot="icon">📦</span>
+		<span slot="title">Slots</span>
+		This is a custom alert, that uses slots to set the icon and title.
+	</callout-alert>
+</main>
